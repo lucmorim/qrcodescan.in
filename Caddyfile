@@ -1,0 +1,12 @@
+# Configuração para HTTPS com Let's Encrypt
+qr.techmula.com.br {
+    root * /srv
+    file_server
+    encode gzip
+    tls suporte@techmula.com.br
+}
+
+# Redirecionar HTTP para HTTPS
+:80 {
+    redir https://qr.techmula.com.br{uri}
+}
